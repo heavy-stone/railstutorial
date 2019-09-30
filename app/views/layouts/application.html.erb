@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SampleApp</title>
+    <%
+=begin%>
+ <title><%= content_for?(:title) ? yield(:title) : "SampleApp" %><%= " | Ruby on Rails Tutorial Sample App" %></title>
+<%
+=end%>
+    <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
